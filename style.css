@@ -11,6 +11,21 @@ html {
     animation: scrollBackground 20s linear infinite;
 }
 
+.body {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.6rem;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  color: inherit;
+}
+
+
+
+
 @keyframes scrollBackground {
     from {
         background-position: 0 0;
