@@ -2,76 +2,93 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Something..</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background-color: #050505; /* Deep space black */
-            color: #00ff41; /* Classic Matrix/Terminal green */
-            font-family: 'Courier New', Courier, monospace;
-            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 100vh;
-        }
-
-        /* The container that holds the spinning layers */
-        .portal-container {
-            position: relative;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
             justify-content: center;
-            align-items: center;
-            perspective: 1000px;
         }
-
-        /* Common styles for each ASCII ring */
-        .ring {
-            position: absolute;
-            white-space: pre;
-            line-height: 1;
+        
+        .container {
             text-align: center;
-            pointer-events: none;
-            user-select: none;
-            animation: spin-and-zoom linear infinite;
-            opacity: 0;
+            color: white;
         }
-
-        /* Different layers with staggered timing and sizing */
-        .ring-1 { animation-duration: 8s;  animation-delay: 0s;   font-size: 10px; }
-        .ring-2 { animation-duration: 8s;  animation-delay: 2s;   font-size: 14px; }
-        .ring-3 { animation-duration: 8s;  animation-delay: 4s;   font-size: 18px; }
-        .ring-4 { animation-duration: 8s;  animation-delay: 6s;   font-size: 22px; }
-
-        @keyframes spin-and-zoom {
-            0% {
-                transform: rotate(0deg) scale(0.1) translateZ(-500px);
-                opacity: 0;
-            }
-            20% {
-                opacity: 1;
-            }
-            80% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: rotate(360deg) scale(4) translateZ(500px);
-                opacity: 0;
-            }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-
-        /* Content Overlay */
-        .content {
-            z-index: 10;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border: 1px solid #00ff41;
-            box-shadow: 0 0 20px #00ff41;
+        
+        p {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .portal-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .portal-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .portal-card:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .portal-card h2 {
+            margin-bottom: 10px;
+        }
+        
+        .portal-card a {
+            color: white;
+            text-decoration: none;
         }
     </style>
 </head>
-</html>
+<body>
+    <div class="container">
+        <h1>Welcome to Portal</h1>
+        <p>Your gateway to amazing experiences</p>
+        
+        <div class="portal-links">
+            <div class="portal-card">
+                <h2>📚 Resources</h2>
+                <a href="#resources">Explore</a>
+            </div>
+            <div class="portal-card">
+                <h2>🚀 Projects</h2>
+                <a href="#projects">Explore</a>
+            </div>
+            <div class="portal-card">
+                <h2>👤 Profile</h2>
+                <a href="#profile">Explore</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
