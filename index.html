@@ -1,20 +1,93 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>rat</title>
-    <link rel="stylesheet" href="style.css" />
-    <meta name="description" content="Rats." />
-    <meta property="og:title" content="Rats" />
-    <meta property="og:description" content="Rats." />
+    <meta charset="UTF-8">
+    <title>Something..</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #050505; /* Deep space black */
+            color: #00ff41; /* Classic Matrix/Terminal green */
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* The container that holds the spinning layers */
+        .portal-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+        }
+
+        /* Common styles for each ASCII ring */
+        .ring {
+            position: absolute;
+            white-space: pre;
+            line-height: 1;
+            text-align: center;
+            pointer-events: none;
+            user-select: none;
+            animation: spin-and-zoom linear infinite;
+            opacity: 0;
+        }
+
+        /* Different layers with staggered timing and sizing */
+        .ring-1 { animation-duration: 8s;  animation-delay: 0s;   font-size: 10px; }
+        .ring-2 { animation-duration: 8s;  animation-delay: 2s;   font-size: 14px; }
+        .ring-3 { animation-duration: 8s;  animation-delay: 4s;   font-size: 18px; }
+        .ring-4 { animation-duration: 8s;  animation-delay: 6s;   font-size: 22px; }
+
+        @keyframes spin-and-zoom {
+            0% {
+                transform: rotate(0deg) scale(0.1) translateZ(-500px);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: rotate(360deg) scale(4) translateZ(500px);
+                opacity: 0;
+            }
+        }
+
+        /* Content Overlay */
+        .content {
+            z-index: 10;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border: 1px solid #00ff41;
+            box-shadow: 0 0 20px #00ff41;
+        }
+    </style>
 </head>
 <body>
-    <div class="body">
-        <h1>HELLO I AM PERNUM.</h1>
-        <h2>WELCOME TO THE SHITSHOW.</h2>
-        <h5>I AM 18. AND MODERATELY COOL.</h5>
-        <p>THIS IS A WEBSITE ABOUT RATS. I HOPE YOU ENJOY IT.</p>
+
+    <div class="portal-container">
+        <div class="ring ring-1">@ # % * + = - : . . : - = + * % # @</div>
+        <div class="ring ring-2">/ \ / \ / \ / \ / \ / \ / \ / \</div>
+        <div class="ring ring-3">0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 1</div>
+        <div class="ring ring-4">░ ▒ ▓ █ ▓ ▒ ░ ▒ ▓ █ ▓ ▒ ░</div>
+        <div class="ring ring-1" style="animation-delay: 1s;">. . . . . . . . . . . .</div>
+        
+        <div class="content">
+            <h1>PORTAL ACTIVATED</h1>
+            <p>Welcome to the digital void.</p>
+        </div>
     </div>
+
 </body>
 </html>
