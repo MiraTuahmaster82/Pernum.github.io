@@ -1,0 +1,207 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background-color: #1a1a1a;
+  background-image: 
+    linear-gradient(45deg, #2d5016 25%, transparent 25%),
+    linear-gradient(-45deg, #2d5016 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #2d5016 75%),
+    linear-gradient(-45deg, transparent 75%, #2d5016 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-attachment: fixed;
+  color: #e0e0e0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+  animation: scroll-bg 5s linear infinite;
+  overflow: hidden;
+  position: relative;
+}
+
+.page-card {
+  width: min(100%, 860px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.171), rgba(255, 255, 255, 0.12));
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 32px;
+  backdrop-filter: blur(42px) saturate(220%);
+  -webkit-backdrop-filter: blur(42px) saturate(220%);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.page-card > * {
+  padding: 1.5rem 2rem;
+}
+
+.page-card header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.page-card h1,
+.page-card h2 {
+  color: #ffffff;
+}
+
+.page-card p {
+  color: #e6e6e6;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 0.75rem;
+  }
+
+  .page-card {
+    border-radius: 20px;
+  }
+
+  .page-card > * {
+    padding: 1rem 1rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+@keyframes scroll-bg {
+  0% {
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  }
+  100% {
+    background-position: 20px 20px, 20px 30px, 30px 10px, 10px 20px;
+  }
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+a:hover {
+  transform: translateY(-5px);
+}
+
+a:visited {
+  color: #ffffff;
+}
+
+ul {
+  list-style-type: none;
+}
+
+section {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+nav li {
+  list-style: none;
+}
+
+.page-card footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.animal-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.confetti-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: 0;
+  border-radius: 2px;
+  opacity: 0.9;
+  transform-origin: center;
+  animation: confetti-fall 2.4s ease-in forwards;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, -24px, 0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(-40px, 100vh, 0) rotate(720deg);
+  }
+}
+
+.animal-float {
+  position: absolute;
+  max-width: 32vw;
+  width: min(320px, 32vw);
+  height: auto;
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(var(--rotation, 0deg));
+  animation: animal-fade linear forwards;
+  will-change: opacity, transform;
+}
+
+@keyframes animal-fade {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.page-card {
+  position: relative;
+  z-index: 1;
+}
+
+.game-image {
+  display: none;
+  max-width: 150px;
+  margin-left: 10px;
+  vertical-align: middle;
+  border-radius: 8px;
+}
+
+li:hover .game-image {
+  display: inline-block;
+}
