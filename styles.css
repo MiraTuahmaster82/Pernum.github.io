@@ -36,12 +36,12 @@ body {
 
 .page-card {
   width: min(100%, 860px);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.171), rgba(255, 255, 255, 0.12));
+  background: linear-gradient(180deg, rgba(225, 225, 225, 0.1), rgba(225, 255, 255, 0.1));
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 32px;
-  backdrop-filter: blur(42px) saturate(220%);
-  -webkit-backdrop-filter: blur(42px) saturate(220%);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(0px) saturate(0%);
+  -webkit-backdrop-filter: blur(50px) saturate(100%);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.24), inset 0 0 0 1px rgba(255, 255, 255, 0.2);
   overflow: hidden;
 }
 
