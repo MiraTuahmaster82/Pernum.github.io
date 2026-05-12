@@ -11,7 +11,7 @@
   function spawnAnimal() {
     if (!enabled) return;
     const img = document.createElement('img');
-    img.src = Math.random() < chanceBadger ? 'badger.png' : 'dog.png';
+    img.src = Math.random() < chanceBadger ? '/Images/badger.png' : '/Images/dog.png';
     img.className = 'animal-float';
     img.style.left = `${10 + Math.random() * 80}%`;
     img.style.top = `${10 + Math.random() * 70}%`;
